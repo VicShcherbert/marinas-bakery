@@ -11,10 +11,25 @@ formElement.addEventListener('submit', (event) => {
     directions: document.getElementById('directions').value,
   };
   recipies.push(recipie);
-  console.log(recipies);
+  // console.log(recipies);
+
+  renderRecipeList();
+
   document.getElementById('recipieName').value = '';
   document.getElementById('ingredients').value = '';
   document.getElementById('directions').value = '';
 });
 
-console.log(recipies);
+const renderRecipeList = () => {
+  const listOfRecipes = document.getElementById('recipe-display');
+  listOfRecipes.innerHTML = '';
+  recipies.forEach((element) => {
+    listOfRecipes.innerHTML = listOfRecipes.innerHTML +=
+      "<div id='recipeItem'><h1 id='recipeHeader'>" +
+      element.recipieName +
+      '</h1>' +
+      "<div id='ingredients'><i>Ingredients: </i>" +
+      element.ingredients +
+      "</div><div id='directions'><i>Directions: </i>" + element.directions + "</div></div>";
+  });
+};
