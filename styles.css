@@ -6,3 +6,11 @@
 #recipeHeader {
     margin: 0px;
 }
+
+#button-holder{
+    border-style: solid;
+}
+
+#another-button-holder{
+    margin-top: 10px;
+}
